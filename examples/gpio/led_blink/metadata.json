@@ -1,1 +1,77 @@
+{
+  "id": "gpio_led_blink_001",
 
+  "title": "GPIO LED Blink",
+
+  "description": "Configures an ESP32 GPIO as an output and periodically toggles an LED between HIGH and LOW states.",
+
+  "target": {
+    "mcu": "ESP32-S3",
+    "framework": "ESP-IDF",
+    "idf_version": "5.0"
+  },
+
+  "category": [
+    "GPIO",
+    "digital_output"
+  ],
+
+  "difficulty": "beginner",
+
+  "hardware": [
+    {
+      "component": "ESP32-S3",
+      "type": "microcontroller"
+    },
+    {
+      "component": "LED",
+      "type": "output_device", "actuator"
+    }
+  ],
+
+  "peripherals": [
+    "GPIO"
+  ],
+
+  "capabilities": [
+    "digital_output",
+    "GPIO_control",
+    "timed_output"
+  ],
+
+  "apis": [
+    "gpio_config",
+    "gpio_set_level",
+    "vTaskDelay"
+  ],
+
+  "input": {
+    "type": "none"
+  },
+
+  "output": {
+    "type": "digital",
+    "behavior": "LED alternates between ON and OFF states"
+  },
+
+  "parameters": {
+    "gpio": "user_defined",
+    "on_time_ms": 1000,
+    "off_time_ms": 1000
+  },
+
+"source": {
+  "organization": "Espressif",
+  "repository": "esp-idf",
+  "type": "official_example",
+  "version": "v5.0",
+  "url": "https://github.com/espressif/esp-idf/tree/v5.0/examples",
+  "license": "Apache-2.0"
+}
+
+  "verification": {
+    "verified": true,
+    "method": "Compiled and executed on ESP32-S3",
+    "expected_result": "LED continuously toggles between ON and OFF"
+  }
+}
